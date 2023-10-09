@@ -9,3 +9,4 @@ class Miembro(models.Model):
     
     def __str__(self):
         return f"{self.nombre.title()} {self.apellido.title()}"
+    

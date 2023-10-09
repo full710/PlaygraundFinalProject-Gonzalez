@@ -5,4 +5,5 @@ app_name = "publicaciones"
 
 urlpatterns = [
     path("", views.index, name="index"),
+    
 ]

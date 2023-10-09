@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request, "home/index.html")
+
+def abaut(request):
+    return render(request, "home/abaut.html")
