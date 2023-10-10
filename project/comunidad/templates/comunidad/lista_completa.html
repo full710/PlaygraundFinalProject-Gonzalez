@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+
+{% block content %}
+    
+<body>
+    <h2 class="m-3 ">Lista de todos los miembros de la comarca</h2>
+    <ul>
+        {% for miembro in miembros %}
+            <li>{{miembro.nombre}} {{miembro.apellido}}</li>      
+        {% endfor %}
+    </ul>
+    <a class="btn btn-success m-3" href="{% url 'comunidad:crear_miembro' %}">Crear nuevo miembro</a>
+    <a class="btn btn-outline-dark m-3 m-3" href="{% url 'home:index' %}">Home</a>
+</body>
+    
+{% endblock content %}
