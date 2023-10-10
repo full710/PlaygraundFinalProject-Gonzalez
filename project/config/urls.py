@@ -25,5 +25,6 @@ urlpatterns = [
 urlpatterns += [
     path("", include("home.urls")),
     path("comunidad/", include("comunidad.urls")),
-    path("publicaciones/", include("publicaciones.urls")),         
+    path("publicaciones/", include("publicaciones.urls")),
+         
 ]

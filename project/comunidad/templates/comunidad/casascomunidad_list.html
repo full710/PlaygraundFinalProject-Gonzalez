@@ -1,0 +1,33 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+{% block content %}
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+<div class="container px-4 px-lg-5">  
+<div class="row gx-4 gx-lg-5">             
+        
+        {% for casa in object_list %}
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">        
+                <div class="card-body">
+                    <h2 class="card-title text-center ">{{ casa.nombre_casa }}</h2>                                               
+                    
+                </div>
+                <div class="col-12 mb-1 text-center">
+                    <img class="img-fluid rounded" src="{% static 'home/images/casa_comarca.png' %}" alt="..." style="max-height: 100%; width: auto;" />
+                </div>
+        
+                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'comunidad:casascomunidad_detail' casa.id %}">Entrar a la casa</a>
+                    <a class="btn btn-primary btn-sm" href="{% url 'comunidad:casascomunidad_update' casa.id %}">Actualizar</a>
+                    <a class="btn btn-primary btn-sm" href="{% url 'comunidad:casascomunidad_delete' casa.id %}">Eliminar</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}  
+    </div>
+      
+    <a class="btn btn-success m-3" href="{% url 'comunidad:casascomunidad_create' %}">Crear nueva casa</a>    
+    <a class="btn btn-outline-dark m-3 m-3" href="{% url 'comunidad:index' %}">Volver</a>
+</body>
+    
+{% endblock content %}

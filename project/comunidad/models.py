@@ -5,6 +5,9 @@ class CasasComunidad(models.Model):
     nombre_casa = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=500)
     
+    def __str__(self):
+        return self.nombre_casa
+    
     class Meta:
         verbose_name = "Casa"
         verbose_name_plural = "Casas"

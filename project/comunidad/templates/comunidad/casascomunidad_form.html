@@ -5,14 +5,13 @@
 <body>
     <div class="col-md-3 mb-3">
         <div class="m-3  text-md-start ">
+            
             <form action="" method="post">
                 {% csrf_token %}
-                {{ form.as_p}}
-                
-                <button class="btn btn-success " type="submit">Guardar</button>
-                <a class="btn btn-outline-dark ms-0   " href="{% url 'comunidad:index' %}">Volver</a>
+                {{ form.as_p}}                
+                <button class="btn btn-success " type="submit">Guardar</button>                
             </form>
-            
+            <a class="btn btn-outline-dark ms-0   " href="{% url 'comunidad:index' %}">Volver</a>
         </div>
     </div>
 </body>

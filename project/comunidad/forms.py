@@ -7,7 +7,7 @@ class MiembroForm(forms.ModelForm):
         model = models.Miembro
         fields = ["nombre","apellido","nacimiento","profesion"]
         
-class CasaComarcaForm(forms.ModelForm):
+class CasasComunidadForm(forms.ModelForm):
     class Meta:
         model = models.CasasComunidad
         fields = ["nombre_casa","descripcion"]
