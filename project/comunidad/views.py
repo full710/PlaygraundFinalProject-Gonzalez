@@ -23,20 +23,27 @@ class CasasComunidadDelete(DeleteView):
     model = models.CasasComunidad
     success_url = reverse_lazy("comunidad:casascomunidad_list")
     
+    ###########################################################
+    
+class MiembroList(ListView):
+    model = models.Miembro
+    
+class MiembroDetail(DetailView):
+    model = models.Miembro
+    
+class MiembroCreate(CreateView):
+    model = models.Miembro
+    form_class = forms.MiembroForm
+    success_url = reverse_lazy("comunidad:miembro_list")
+    
+class MiembroUpdate(UpdateView):
+    model = models.Miembro
+    form_class = forms.MiembroForm
+    success_url = reverse_lazy("comunidad:miembro_list")
+    
+class MiembroDelete(DeleteView):
+    model = models.Miembro
+    success_url = reverse_lazy("comunidad:miembro_list")
+    
 
-def crear(request):
-    if request.method == "POST":
-        form = forms.MiembroForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("comunidad:index")
-    else:
-        form = forms.MiembroForm()
-    return render(request, "comunidad/crear_miembro.html", {"form":form})
-
-
-
-def lista_completa(request):
-    miembro = models.Miembro.objects.all()
-    return render (request, "comunidad/lista_completa.html", {"miembros":miembro})
     

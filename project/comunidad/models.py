@@ -11,12 +11,13 @@ class CasasComunidad(models.Model):
     class Meta:
         verbose_name = "Casa"
         verbose_name_plural = "Casas"
+        
 class Miembro(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     nacimiento = models.DateField(null=True)
     profesion = models.CharField(max_length=50)
-    casa_comarca = models.ForeignKey(CasasComunidad, on_delete=models.SET_NULL,null=True,blank=True)
+    casa_comarca = models.ForeignKey(CasasComunidad, on_delete=models.SET_NULL,null=True,blank=True, verbose_name="Hogar en la comarca")
     
     class Meta:
         verbose_name = "Miembro"
