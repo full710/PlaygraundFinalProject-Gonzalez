@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>La comarca de artesanal</title>
+        <title>La comarca</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'home/assets/favicon.ico' %}" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -17,36 +17,9 @@
             {% include 'home/navbar.html' %}
         </nav>
         <!-- Page Content-->
-        {% block content %}            
+            {% block content %}            
         
-        <div class="container px-4 px-lg-5">
-                      
-                        <!-- Heading Row-->
-                    <div class="row gx-4 gx-lg-5 align-items-center my-5">
-                        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'home/images/comarca.jpeg' %}" alt="..." /></div>
-                        <div class="col-lg-5">
-                            <h1 class="font-weight-light">La comarca artesanal</h1>
-                            <p>La comarca artesanal es una comunidad creada para que cada artesano que quiera formar parte pueda darse a conocer, crear publicaciones donde pueda mostrar sus productos y dejar información para que pueda ser contactado</p>
-                            <a class="btn btn-primary" href="{% url 'comunidad:crear_miembro' %}">SE PARTE AHORA!</a>
-                        </div>
-                    </div>
-                    <!-- Call to Action-->
-                    <div class="card text-white bg-secondary my-5 py-4 text-center">
-                        <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
-                    </div>
-                    <!-- Content Row-->
-                    <div class="row gx-4 gx-lg-5">
-                        {% include 'home/card.html' with card="Nueva publicacion" %}
-                        {% include 'home/card.html' with card="Nueva publicacion" %}
-                        {% include 'home/card.html' with card="Nueva publicacion" %}
-                        {% include 'home/card.html' with card="Nueva publicacion" %}
-                        {% include 'home/card.html' with card="Nueva publicacion" %}
-                        {% include 'home/card.html' with card="Nueva publicacion" %}
-
-
-                    </div>
-                </div>               
-                            
+       
             {% endblock content %}
 
             <nav>

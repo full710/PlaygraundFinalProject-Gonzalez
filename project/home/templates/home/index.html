@@ -1,15 +1,44 @@
 {% extends 'home/base.html' %}
+{% load static %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>ACA ESTAMOS</h1>
-    <button><a href="{% url 'comunidad:index' %}">Comunidad</a></button>
-</body>
-</html>
+<div class="container px-4 px-lg-5">
+                      
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'home/images/comarca.jpeg' %}" alt="..." /></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">La comarca</h1>
+            <p>La comarca artesanal es una comunidad creada para que cada artesano que quiera formar parte pueda darse a conocer, crear publicaciones donde pueda mostrar sus productos y dejar información para que pueda ser contactado</p>
+            <a class="btn btn-primary" href="{% url 'comunidad:crear_miembro' %}">SE PARTE AHORA!</a>
+        </div>
+    </div>
+    <!-- Call to Action-->
+    <div class="card text-white bg-secondary my-5 py-4 text-center">
+        <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+    </div>
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">             
+        
+            {% for publicacion in publicaciones %}
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    
+                    <div class="card-body">
+                        <h2 class="card-title">{{ publicacion.titulo }}</h2>                                            
+                        
+                    </div>
+                    <div class="col-12  mb-1 "><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'home/images/comarca.jpeg' %}" alt="..." />
+                    </div>
+            
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Ver publicación</a></div>
+                </div>
+            </div>   
+            {% endfor %}
+        
+
+
+    </div>
+    </div>
 {% endblock content %}
+</html>
+

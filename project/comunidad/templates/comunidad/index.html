@@ -1,3 +1,4 @@
+{% extends 'home/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>COMUNIDAD</h1>
-    <ul>
-        {% for miembro in miembros %}
-            <li>{{miembro.nombre}} {{miembro.apellido}}</li>      
-        {% endfor %}
-    </ul>
-    <p>{{miembro.nombre}}</p>
+    {% block content %}
+    </html>
+    <body>
+        <h2 class="m-3 ">COMUNIDAD</h2>
+        <ul>
+            {% for miembro in miembros %}
+                <li>{{miembro.nombre}} {{miembro.apellido}}</li>      
+            {% endfor %}
+        </ul>
+        <p>{{miembro.nombre}}</p>
+        <a class="btn btn-success m-3" href="{% url 'comunidad:crear_miembro' %}">Crear nuevo miembro</a>
+        <a class="btn btn-outline-dark m-3 m-3" href="{% url 'home:index' %}">Home</a>
+    </body>
+    </html>
+    {% endblock content %}
+    
 </body>
-</html>
