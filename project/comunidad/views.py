@@ -8,6 +8,14 @@ class CasasComunidadList(ListView):
     
 class CasasComunidadDetail(DetailView):
     model = models.CasasComunidad
+    template_name = "comunidad/casascomunidad_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        casa = context['object']
+        miembros = casa.miembro_set.all()
+        context['miembros'] = miembros
+        return context
     
 class CasasComunidadCreate(CreateView):
     model = models.CasasComunidad

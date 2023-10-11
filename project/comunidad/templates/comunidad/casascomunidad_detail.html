@@ -4,7 +4,14 @@
 
     <ul>
         <h2>{{object.nombre_casa}}</h2>
-        <p>{{object.descripcion}}</p>       
+        <p>{{object.descripcion}}</p>
+        
+        <h2>Miembros de esta Casa:</h2>
+    <ul>
+        {% for miembro in miembros %}
+            <li>{{ miembro.nombre }} {{ miembro.apellido }} - (contacto : {{miembro.email}})</li>
+        {% endfor %}
+    </ul>
     </ul>
     <a class="btn btn-outline-dark m-3 m-3" href="{% url 'comunidad:casascomunidad_list' %}">Volver</a>
 {% endblock content %}
