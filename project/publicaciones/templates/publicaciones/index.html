@@ -10,27 +10,11 @@
     {% block content %}
     </html>
     <body>
-        <h2 class="m-3 ">Publicaciones</h2>
-        <ul>
-            {% for publicacion in publicaciones %}
-                <h3 class="m-1 ">{{publicacion.titulo}}</h3>
-                <p class="m-1 ">{{publicacion.descripcion}}</p>
-            {% endfor %}
-        </ul>
-        <a class="btn btn-success m-3" href="{% url 'publicaciones:crear_publicacion' %}">Crear nueva publicacion</a>
+        <h2 class="m-3 ">Publicaciones</h2>        
+        <a class="btn btn-success m-3" href="{% url 'publicaciones:publicaciones_create' %}">Crear nueva publicacion</a>
+        <a class="btn btn-success m-3" href="{% url 'publicaciones:publicaciones_list' %}">Lista de publicaciones</a>
         <a class="btn btn-outline-dark m-3 m-3" href="{% url 'home:index' %}">Home</a>
     </body>
     </html>
     {% endblock content %}
     
-</body>
-<body>
-    <h1>ACA ESTAMOS EN PUBLICACIONES</h1>
-    <ul>
-        {% for publicacion in publicaciones %}
-            <h3>{{publicacion.titulo}}</h3>
-            <p>{{publicacion.descripcion}}</p>
-        {% endfor %}
-    </ul>
-</body>
-</html>

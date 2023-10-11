@@ -5,7 +5,7 @@ from . import models
 admin.site.site_title = "Publicaciones"
 admin.site.register(models.Publicaciones)
 
-class PublicacionesAdmin(admin.ModelAdmin):
+class PublicacionAdmin(admin.ModelAdmin):
     list_display = ("titulo","descripcion","cantidad","precio","email_contacto","telefono_contacto",)
     search_fields = ("titulo",)
     list_filter = ("titulo",)

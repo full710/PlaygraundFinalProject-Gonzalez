@@ -1,0 +1,18 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+    <ul>
+        <h2>{{object.titulo}}</h2>        
+        <p>{{object.descripcion}}</p>        
+        <p>Precio: ${{object.precio}}</p>
+        <p>Datos de contaco:</p>
+        <li>
+            email: {{object.email_contacto}} 
+        </li>   
+        <li> 
+            Telefono: {{object.telefono_contacto}}
+        </li> 
+    </ul>
+    <a class="btn btn-outline-dark m-3 m-3" href="{% url 'publicaciones:publicaciones_list' %}">Volver</a>
+{% endblock content %}

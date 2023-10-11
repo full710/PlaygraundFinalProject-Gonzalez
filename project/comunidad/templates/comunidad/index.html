@@ -1,17 +1,21 @@
 {% extends 'home/base.html' %}
-
-{% load static %}
-{% block content %}
-<div class="row gx-4 gx-lg-5 align-items-center my-5">
-<div class="container px-4 px-lg-5">  
-<div class="row gx-4 gx-lg-5">             
-        
-        
-    <a class="btn btn-success m-3 " href="{% url 'comunidad:casascomunidad_list' %}">Conoce las casas de los artesanos</a>
-    <a class="btn btn-success m-3" href="{% url 'comunidad:miembro_list' %}">Lista de miembros</a>        
-    <a class="btn btn-outline-dark m-3" href="{% url 'home:index' %}">Home</a>
-
-    
-{% endblock content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    </html>
+    <body>
+        <h2 class="m-3 ">Comunidad</h2>        
+        <a class="btn btn-success m-3 " href="{% url 'comunidad:casascomunidad_list' %}">Casas de artesanos</a>
+        <a class="btn btn-success m-3" href="{% url 'comunidad:miembro_list' %}">Lista de miembros</a>        
+        <a class="btn btn-outline-dark m-3" href="{% url 'home:index' %}">Home</a>
+    </body>
+    </html>
+    {% endblock content %}
     
 

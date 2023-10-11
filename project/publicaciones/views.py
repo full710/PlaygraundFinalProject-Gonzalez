@@ -1,19 +1,25 @@
 from django.shortcuts import render, redirect
-
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from . import models, forms
-# Create your views here.
-def index(request):
-    publicacion = models.Publicaciones.objects.all()
+class PublicacionesList(ListView):
+    model = models.Publicaciones
     
-    return render(request, "publicaciones/index.html", {"publicaciones":publicacion})
-
-def crear(request):
-    if request.method == "POST":
-        form = forms.PublicacionesForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("publicaciones:index")
-    else:
-        form = forms.PublicacionesForm()
-    return render(request, "publicaciones/crear_publicacion.html", {"form":form})
+class PublicacionesDetail(DetailView):
+    model = models.Publicaciones
+    
+class PublicacionesCreate(CreateView):
+    model = models.Publicaciones
+    form_class = forms.PublicacionesForm
+    success_url = reverse_lazy("publicaciones:publicaciones_list")
+    
+class PublicacionesUpdate(UpdateView):
+    model = models.Publicaciones
+    form_class = forms.PublicacionesForm
+    success_url = reverse_lazy("publicaciones:publicaciones_list")
+    
+class PublicacionesDelete(DeleteView):
+    model = models.Publicaciones
+    success_url = reverse_lazy("publicaciones:publicaciones_list")
 
