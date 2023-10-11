@@ -1,0 +1,11 @@
+{% extends 'home/base.html' %}
+{% block content %}
+</html>
+<body>
+    <strong><p class="m-lg-3  mx-auto">Regístrate y se parte de nuestra comunidad, podrás crear publicaciones con tus creaciones y dar a conocer tus habilidades</p></strong>
+    <a class="btn btn-success m-3 text-center " href="{% url 'users:registro' %}">Crear nuevo usuario</a>
+    <a class="btn btn-success m-3text-center " href="{% url 'users:inicio-sesion' %}">Iniciar sesión</a>
+    <a class="btn btn-outline-dark m-3 m-3 text-center " href="{% url 'home:index' %}">Home</a>
+</body>
+</html>
+{% endblock content %}

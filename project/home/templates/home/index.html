@@ -7,15 +7,16 @@
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'home/images/comarca.jpeg' %}" alt="..." /></div>
         <div class="col-lg-5">
-            <h1 class="font-weight-light">La comarca</h1>
-            <p>La comarca es una comunidad creada para que cada artesano que quiera formar parte pueda darse a conocer, crear publicaciones donde pueda mostrar sus productos y dejar información para que pueda ser contactado</p>
-            <a class="btn btn-primary" href="{% url 'comunidad:miembro_create' %}">SE PARTE AHORA!</a>
+            <h1 class="font-weight-light text-center ">La comarca</h1>
+            <strong><p class="text-center text-body  ">
+                "Tu comunidad local para comprar, vender y conectarte."</p></strong>
+            <div class="text-center ">            
+            <a class="btn btn-primary" href="{% url 'comunidad:miembro_create' %}">Se parte!</a>
+            <a class="btn btn-primary" href="{% url 'comunidad:miembro_create' %}">Nosotros!</a>
+            </div>
         </div>
     </div>
-    <!-- Call to Action-->
-    <div class="card text-white bg-secondary my-5 py-4 text-center">
-        <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
-    </div>
+    
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">             
         

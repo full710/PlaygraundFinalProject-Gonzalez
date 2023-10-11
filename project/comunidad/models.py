@@ -17,6 +17,7 @@ class Miembro(models.Model):
     apellido = models.CharField(max_length=50)
     nacimiento = models.DateField(null=True)
     profesion = models.CharField(max_length=50)
+    email = models.EmailField(unique=True)
     casa_comarca = models.ForeignKey(CasasComunidad, on_delete=models.SET_NULL,null=True,blank=True, verbose_name="Hogar en la comarca")
     
     class Meta:

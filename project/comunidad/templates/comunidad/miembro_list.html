@@ -7,8 +7,9 @@
     <h2 class="m-3 ">Lista de todos los miembros de la comarca</h2>
     <ul>
         {% for miembro in object_list %}
-            <li>{{miembro.nombre}} {{miembro.apellido}}</li>
-            <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'comunidad:miembro_detail' miembro.id %}">Perfil</a>
+            <li>{{miembro.nombre}} {{miembro.apellido}} -- {{miembro.casa_comarca}}</li>
+            
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'comunidad:miembro_detail' miembro.id %}">Contactar</a>
                 <a class="btn btn-primary btn-sm" href="{% url 'comunidad:miembro_update' miembro.id %}">Actualizar</a>
                 <a class="btn btn-primary btn-sm" href="{% url 'comunidad:miembro_delete' miembro.id %}">Eliminar</a>
             </div>      
@@ -16,6 +17,9 @@
     </ul>
     <a class="btn btn-success m-3" href="{% url 'comunidad:miembro_create' %}">Crear nuevo miembro</a>
     <a class="btn btn-outline-dark m-3 m-3" href="{% url 'comunidad:index' %}">Volver</a>
+    {% if not user.is_authenticated %} 
+    <p class="m-lg-3">Puedes ser miembro de la comunidad sin estar registrado y darte a conocer!!</p>
+    {% endif %}
 </body>
     
 {% endblock content %}

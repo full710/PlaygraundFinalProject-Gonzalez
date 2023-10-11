@@ -4,7 +4,8 @@
 
     <ul>
         <h2>Nombre: {{object.nombre}} {{object.apellido}}</h2>
-        <p>{{object.casa_comarca}}</p>    
+        <p>{{object.casa_comarca}}</p>
+        <p>{{object.email}}</p>    
     </ul>
     <a class="btn btn-outline-dark m-3 m-3" href="{% url 'comunidad:miembro_list' %}">Volver</a>
 {% endblock content %}

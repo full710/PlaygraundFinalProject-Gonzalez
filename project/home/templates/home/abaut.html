@@ -1,12 +1,37 @@
 {% extends 'home/base.html' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block content %}
 <body>
-    
+    <header>
+        <h1 class="m-5 ">Sobre Nosotros - La Comarca</h1>
+    </header>
+    <div class="container">
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos un grupo diverso de entusiastas de la Comarca, desde los amantes de la tecnología hasta los aficionados a la jardinería. Nos enorgullece ser la plataforma de elección para la comunidad local.</p>
+
+        <h2>¿Qué hacemos?</h2>
+        <p>En La Comarca, brindamos una plataforma segura y conveniente para que los miembros publiquen sus clasificados de venta.
+            <h2>¿Por qué elegir La Comarca?</h2>
+        <ul class="feature-list">
+            <li>
+                <div class="icon">✔️</div>
+                <p>Local y Confiable: Conocemos la Comarca y confiamos en que encontrarás justo lo que necesitas dentro de nuestra comunidad.</p>
+            </li>
+            <li>
+                <div class="icon">🔐</div>
+                <p>Seguridad: Protegemos tus datos y fomentamos la transparencia en todas las transacciones.</p>
+            </li>
+            <li>
+                <div class="icon">🚀</div>
+                <p>Facilidad de Uso: Nuestra plataforma es intuitiva y sencilla de navegar. Puedes buscar y publicar anuncios en cuestión de minutos.</p>
+            </li>
+            <li>
+                <div class="icon">👥</div>
+                <p>Comunidad Activa: Únete a una comunidad activa de compradores y vendedores, con opciones para discutir, hacer preguntas y socializar con otros miembros.</p>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <strong><p class="text-center ">¡Gracias por ser parte de nuestra comunidad!</p></strong>
+    </footer>
 </body>
-</html>
+{% endblock content %}
