@@ -5,23 +5,22 @@
 <div class="container px-4 px-lg-5">  
 <div class="row gx-4 gx-lg-5">             
         
-        {% for publicacion in object_list %}
-        <div class="col-md-4 mb-5">
-            <div class="card h-100">        
-                <div class="card-body">
-                    <h2 class="card-title text-center ">{{ publicacion.titulo }}</h2>                                               
-                    
-                </div>
-                <div class="col-12 mb-1 text-center">
-                    <img class="img-fluid rounded" src="{% static 'home/images/casa_comarca.png' %}" alt="..." style="max-height: 100%; width: auto;" />
-                </div>
-        
-                <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'publicaciones:publicaciones_detail' publicacion.id %}">Ver publicacion</a>
-                    <a class="btn btn-primary btn-sm" href="{% url 'publicaciones:publicaciones_update' publicacion.id %}">Actualizar</a>
-                    <a class="btn btn-primary btn-sm" href="{% url 'publicaciones:publicaciones_delete' publicacion.id %}">Eliminar</a>
-                </div>
-            </div>
+{% for publicacion in object_list %}
+<div class="col-md-3 mb-4">
+    <div class="card h-100">
+        <div class="card-body ">
+            <h2 class="card-title text-center">{{ publicacion.titulo }}</h2>
         </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <img class="img-fluid rounded" src="{% static 'home/images/comarca.jpeg' %}" alt="..." style="max-height: 90%; width: auto;" />
+        </div>
+        <div class="card-footer text-center">
+            <a class="btn btn-primary btn-sm" href="{% url 'publicaciones:publicaciones_detail' publicacion.id %}">Ver publicación</a>
+            <a class="btn btn-primary btn-sm" href="{% url 'publicaciones:publicaciones_update' publicacion.id %}">Actualizar</a>
+            <a class="btn btn-primary btn-sm" href="{% url 'publicaciones:publicaciones_delete' publicacion.id %}">Eliminar</a>
+        </div>
+    </div>
+</div>
         {% endfor %}  
     </div>
       

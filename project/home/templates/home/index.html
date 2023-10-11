@@ -20,16 +20,16 @@
     <div class="row gx-4 gx-lg-5">             
         
             {% for publicacion in publicaciones %}
-            <div class="col-md-4 mb-5">
-                <div class="card h-100">                    
-                    <div class="card-body">
-                        <h2 class="card-title text-center ">{{ publicacion.titulo }}</h2>                                           
-                        
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body ">
+                        <h2 class="card-title text-center">{{ publicacion.titulo }}</h2>
                     </div>
-                    <div class="col-12  mb-1 "><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'home/images/comarca.jpeg' %}" alt="..." />
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img class="img-fluid rounded" src="{% static 'home/images/comarca.jpeg' %}" alt="..." style="max-height: 90%; width: auto;" />
                     </div>
             
-                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">Ver publicación</a></div>
+                    <div class="card-footer text-center" ><a class="btn btn-primary btn-sm" href="{% url 'publicaciones:publicaciones_detail' publicacion.id %}" >Ver publicación</a></div>
                 </div>
             </div>   
             {% endfor %}
