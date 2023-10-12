@@ -1,11 +1,12 @@
 {% extends 'home/base.html' %}
 
-
-
-    {% block content %}
-        
+{% block content %} 
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="container px-4 px-lg-5">                
         <h1><strong>Has iniciado sesión</strong></h1>
         <a class="btn btn-outline-dark m-3 m-3" href="{% url 'home:index' %}">Home</a>
-        <a class="btn btn-outline-dark m-3 m-3" href="{% url 'users:perfil' %}">Mi perfil</a>
-    {% endblock content %}
+        <a class="btn btn-outline-dark m-3 m-3" href="{% url 'users:perfil' %}">Mi perfil</a>        
+    </div>
+</div>
+{% endblock content %}
     

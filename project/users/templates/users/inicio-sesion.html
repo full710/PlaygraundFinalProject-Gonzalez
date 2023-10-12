@@ -1,9 +1,15 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Iniciar Sesión</button>
-    </form>
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="container px-4 px-lg-5">  
+        <div class="row gx-4 gx-lg-5"> 
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}

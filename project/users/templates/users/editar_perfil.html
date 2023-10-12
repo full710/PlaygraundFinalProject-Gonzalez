@@ -1,10 +1,16 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <h2>Editar Perfil</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Guardar cambios</button>
-    </form>
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="container px-4 px-lg-5">  
+        <div class="row gx-4 gx-lg-5">
+            <h2>Editar Perfil</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Guardar cambios</button>
+            </form>
+        </div>
+    </div>
+</div>               
 {% endblock content %}

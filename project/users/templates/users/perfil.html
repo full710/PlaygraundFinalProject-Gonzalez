@@ -1,32 +1,25 @@
 {% extends 'home/base.html' %}
 {% block content %}
-      <div class="container">
-    <h1>Mi Perfil</h1>
-    <div class="profile-info">
-      <div class="profile-picture">       
-      </div>
-      <div class="profile-details">
-        <p><strong>Nombre:</strong> {{ user.nombre }} {{ user.apellido }}</p>
-        <p><strong>Email:</strong> {{ user.email }}</p>
-        <p><strong>Fecha de Nacimiento:</strong> {{ user.fecha_nacimiento }}</p>
-        <p><strong>Número de Teléfono:</strong> {{ user.numero_telefono }}</p>
-      </div>
-    </div>
-  </div>
-  <style>
-    .profile-info {
-      display: flex;
-      align-items: center;
-      margin-top: 20px;
-    }
-    .profile-picture {
-      margin-right: 20px;
-    }
-    .profile-details p {
-      margin: 5px 0;
-    }
-  </style>
-  <a class="btn btn-dark   m-3 m-3" href="{% url 'users:editar_perfil' %}">Editar perfil</a>
-  <a class="btn btn-outline-dark m-3 m-3" href="{% url 'home:index' %}">Home</a>
+<div class="row gx-4 gx-lg-5 align-items-center my-5">
+  <div class="container px-4 px-lg-5">  
+      <div class="row gx-4 gx-lg-5">        
+          <h1>Mi Perfil</h1>
+            <div class="profile-info">
+              <div class="profile-picture"></div>   
+                <div class="profile-details">
+                <p><strong>Nombre:</strong> {{ user.nombre }} {{ user.apellido }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Fecha de Nacimiento:</strong> {{ user.fecha_nacimiento }}</p>
+                <p><strong>Número de Teléfono:</strong> {{ user.numero_telefono }}</p>
+              </div>
+            </div>
+          </div>
+          <a class="btn btn-dark   m-3 m-3" href="{% url 'users:editar_perfil' %}">Editar perfil</a>
+          <a class="btn btn-outline-dark m-3 m-3" href="{% url 'home:index' %}">Home</a>
+        </div>
+      </div>      
+    </div>  
+  
+  
 {% endblock content %}  
     
