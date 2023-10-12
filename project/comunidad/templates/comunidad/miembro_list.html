@@ -2,16 +2,30 @@
 
 
 {% block content %}
+
+     
     
 <body>
     <h2 class="m-3 ">Lista de todos los miembros de la comarca</h2>
+    <div class="py-4 m-3">
+        <form action="" method="get">
+            <input type="text" name="buscar" placeholder="Buscar artesano">
+            <button type="submit">Buscar</button>
+            {% if not object_list %}
+                <p>No se encontraron usuarios que coincidan con la búsqueda.</p>
+            {% endif %}
+        </form>
+    </div> 
+    
     <ul>
         {% for miembro in object_list %}
             <li>{{miembro.nombre}} {{miembro.apellido}} -- {{miembro.casa_comarca}}</li>
             
             <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'comunidad:miembro_detail' miembro.id %}">Contactar</a>
+                {% if user.is_authenticated %} 
                 <a class="btn btn-primary btn-sm" href="{% url 'comunidad:miembro_update' miembro.id %}">Actualizar</a>
                 <a class="btn btn-primary btn-sm" href="{% url 'comunidad:miembro_delete' miembro.id %}">Eliminar</a>
+                {% endif %}
             </div>      
         {% endfor %}
     </ul>

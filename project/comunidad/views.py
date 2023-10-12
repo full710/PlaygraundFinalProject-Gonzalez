@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView
@@ -31,10 +33,18 @@ class CasasComunidadDelete(DeleteView):
     model = models.CasasComunidad
     success_url = reverse_lazy("comunidad:casascomunidad_list")
     
-    ###########################################################
     
 class MiembroList(ListView):
     model = models.Miembro
+    
+    def get_queryset(self):
+        consulta = self.request.GET.get("buscar")
+    
+        if consulta:       
+            object_list = models.Miembro.objects.filter(nombre__icontains=consulta)
+        else:        
+            object_list = models.Miembro.objects.all()    
+        return object_list
     
 class MiembroDetail(DetailView):
     model = models.Miembro
